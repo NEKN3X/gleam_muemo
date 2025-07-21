@@ -7,7 +7,7 @@ pub fn main() -> Nil {
 }
 
 pub fn muemo_test() {
-  use a <- muemo.create()
+  use a <- muemo.new()
   muemo.set(a, "key1", "value1")
   muemo.get(a, "key1")
   |> should.equal(Ok("value1"))
@@ -23,7 +23,7 @@ fn fib(n, cache) {
 
 pub fn fib_test() {
   {
-    use cache <- muemo.create()
+    use cache <- muemo.new()
     fib(50, cache)
   }
   |> should.equal(12_586_269_025)

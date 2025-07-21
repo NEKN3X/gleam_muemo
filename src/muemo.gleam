@@ -4,7 +4,7 @@ import internal/js/ref
 pub type Cache(k, v) =
   ref.MutableRef(Dict(k, v))
 
-pub fn create(f: fn(Cache(a, b)) -> c) -> c {
+pub fn new(f: fn(Cache(a, b)) -> c) -> c {
   dict.new() |> ref.create |> f
 }
 
